@@ -10,6 +10,17 @@
 	<link rel="stylesheet" href="styles/spectre.css">
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 </head>
+<script>
+	function user_chose_rock() {
+		document.getElementById("user_display").style.backgroundImage = "url('https://static1.squarespace.com/static/557b9edce4b069fd29bb0fb2/t/559de083e4b03f65c8d3cd9d/1436410733079/')";
+	}
+	function user_chose_paper() {
+		document.getElementById("user_display").style.backgroundImage = "url('http://clipartix.com/wp-content/uploads/2016/04/Paper-clip-art-diy-free-clipart-images.jpeg')";
+	}
+	function user_chose_scissors() {
+		document.getElementById("user_display").style.backgroundImage = "url('http://www.clipartbest.com/cliparts/9Tz/one/9Tzonednc.png')";
+	}
+</script>
 <body>
 	<div id="container">
 
@@ -24,9 +35,9 @@
 				<div class="player_displays" id="computer_display">Computer Display</div>
 				<div class="player_displays" id="user_display">
 					<div id="user_display_buttons_container">
-						<button class="user_display_buttons">R</button>
-						<button class="user_display_buttons">P</button>
-						<button class="user_display_buttons">S</button>
+						<button class="user_display_buttons" onclick="user_chose_rock()">R</button>
+						<button class="user_display_buttons" onclick="user_chose_paper()">P</button>
+						<button class="user_display_buttons" onclick="user_chose_scissors()">S</button>
 					</div>
 				</div>
 				<div id="sign_up_message">Sign Up</div>

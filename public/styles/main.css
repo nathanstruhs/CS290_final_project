@@ -75,6 +75,7 @@ header {
 }
 
 #user_display {
+	background-image:none;
 	height: 350px;
 }
 
