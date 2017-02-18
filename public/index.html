@@ -20,6 +20,12 @@
 	function user_chose_scissors() {
 		document.getElementById("user_display").style.backgroundImage = "url('http://www.clipartbest.com/cliparts/9Tz/one/9Tzonednc.png')";
 	}
+	function randomize_computer_choice() {
+		var images = ['https://static1.squarespace.com/static/557b9edce4b069fd29bb0fb2/t/559de083e4b03f65c8d3cd9d/1436410733079/', 'http://clipartix.com/wp-content/uploads/2016/04/Paper-clip-art-diy-free-clipart-images.jpeg', 'http://www.clipartbest.com/cliparts/9Tz/one/9Tzonednc.png'];
+		var num = Math.floor(Math.random() * 3);
+		alert(images[num]);
+		document.getElementById("computer_display").style.backgroundImage =  "url('" + images[num] + "')";
+	}
 </script>
 <body>
 	<div id="container">
@@ -32,7 +38,11 @@
 		<div id="main_content">
 			<div id="game_container">
 				<div id="win_count">Win Count</div>
-				<div class="player_displays" id="computer_display">Computer Display</div>
+				<div class="player_displays" id="computer_display">
+					<div id="computer_display_button_container">
+						<button class="computer_display_button" onclick="randomize_computer_choice()">Randomize</button>
+					</div>
+				</div>
 				<div class="player_displays" id="user_display">
 					<div id="user_display_buttons_container">
 						<button class="user_display_buttons" onclick="user_chose_rock()">R</button>
