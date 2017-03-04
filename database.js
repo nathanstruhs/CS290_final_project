@@ -20,7 +20,11 @@ exports.findUsers = function(req,res) {
     var cursor = database.collection('users').find( ).toArray(function (err, result) {
         if(!err) {
              for(var i = 0;i < result.length; ++i) {
-	            res.write(result[i].username+ " " +result[i].cwc);             
+                if (i != result.length - 1) {
+	               res.write(result[i].username+ " " +result[i].cwc + "\n");    
+                } else {
+                    res.write(result[i].username+ " " +result[i].cwc); 
+                }         
 	        } 
         } else {
             console.log(err);

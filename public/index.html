@@ -8,23 +8,9 @@
 	<link rel="icon" href="images/favicon.png">
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="core.js"></script>
 </head>
-<script>
-	function user_chose_rock() {
-		document.getElementById("user_display").style.backgroundImage = "url(./images/rock.png)";
-	}
-	function user_chose_paper() {
-		document.getElementById("user_display").style.backgroundImage = "url(./images/paper.jpeg)";
-	}
-	function user_chose_scissors() {
-		document.getElementById("user_display").style.backgroundImage = "url(./images/scissors.png)";
-	}
-	function randomize_computer_choice() {
-		var images = ['./images/rock.png', './images/paper.jpeg', './images/scissors.png'];
-		var num = Math.floor(Math.random() * 3);
-		document.getElementById("computer_display").style.backgroundImage =  "url('" + images[num] + "')";
-	}
-</script>
 <body>
 	<div id="container">
 
@@ -50,7 +36,10 @@
 				</div>
 				<div id="sign_up_message">Sign Up</div>
 			</div>
-			<div id="leaderboard">Leaderboard</div>
+			<div id="leaderboard">
+				<h2 id="leaderboard-h2">Leaderboard</h2>
+					<ol id="leaderboard-ol"></ol>
+			</div>
 		</div>
 
 		<footer>
