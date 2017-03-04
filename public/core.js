@@ -31,7 +31,7 @@ $(document).ready( function() {
 
 		console.log("COM MOVE: " + computer_move + " Pl MOVE: " + player_move);
 
-		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move })
+		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move})
 		.done(function(data) {
 			console.log(data);
 		}).fail(function() {
@@ -39,4 +39,14 @@ $(document).ready( function() {
 		})
 	})
 
+	$('#sign_up_form').submit(function () {
+		var username = $('#username').val();
+		var password = $('#password').val();
+
+		$.post("http://localhost:8080/addUsers", {username: username, password: password}, function() {window.location.replace("/");});
+		alert("Added new user successfully");
+	})
+
 });
+
+

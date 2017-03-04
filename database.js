@@ -55,4 +55,24 @@ exports.getMoves = function(req, res) {
     }
 }
 
+exports.addUser = function(req, res) {
+    console.log("Adding user");
+
+    var new_user = {};
+    new_user.username = req.body.username;
+    new_user.password = req.body.password;
+    new_user.cwc = 0;
+
+    database.collection('users',function(err,collection){
+        collection.insert(new_user , {safe :true}, function(err, result) {
+            if (err) {
+                console.log("Error"+err);
+            } else {
+                console.log('Success: ' + JSON.stringify(result));
+                res.send("Success");
+            }
+        });
+    });
+}
+
 
