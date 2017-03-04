@@ -24,5 +24,19 @@ $(document).ready( function() {
 			$('#leaderboard-ol').append('<li class="leaderboard-li" >' + username_and_cwc[i] + '</li>');
 		}
 	});
-});
 
+	$('.user_display_buttons').click(function() {
+		var computer_move = $('#computer_display').css('background-image');
+		var player_move = $('#user_display').css('background-image');
+
+		console.log("COM MOVE: " + computer_move + " Pl MOVE: " + player_move);
+
+		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move })
+		.done(function(data) {
+			console.log(data);
+		}).fail(function() {
+			console.log("getMoves failed");
+		})
+	})
+
+});
