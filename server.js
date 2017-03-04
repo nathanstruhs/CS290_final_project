@@ -1,13 +1,12 @@
 var express = require('express');
+var database = require('./database');
 var app = express();
 
-app.get('/', function (req, res) { 
-	res.send('Hello Bend. <br/> Use POSTMAN and POST to me. I dare you!'); 
-})
+app.use(express.static('public'));
 
-app.post('/', function (req, res) { 
-	res.send('Hello Portland'); 
-})
+app.get('/', function (req, res) { 
+	res.sendFile(path.join(__dirname + '/public/index.html'));
+});
 
 var server = app.listen(8080, function() {
 	console.log("server listening at 8080");
