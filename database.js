@@ -96,6 +96,8 @@ exports.validateUser = function(req, res) {
                 }
             } else {
                 console.log("ERROR: " + err);
+                res.send("false");
+                res.end();
             }
         });
     });

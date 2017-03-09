@@ -51,30 +51,31 @@ $(document).ready( function() {
 		var username = $('#username').val();
 		var password = $('#password').val();
 
-		// $.post("/loginUser", {username: username, password: password}, function(data) {
-		// 	console.log(data);
-		// 	if (data == true) {
-		// 		alert("Logged in");
-		// 		window.location.replace("/");
-		// 	} else {
-		// 		alert("Login failed");
-		// 	}
-		// });
 		$.ajax({
 			type: 'POST',
 			url: "/loginUser",
 			data: { 'username': username,
 					'password': password },
 			success: function(data) {
-				alert("Logged in");
-				window.location.replace("/");
+				if (data == "true") {
+					alert("Logged in");
+					window.location.replace("/");
+				} else {
+					alert("Invalid login credentials");
+					$('#username').removeAttr('value');
+					$('#password').removeAttr('value');
+				}
+				
 			}, error: function(errorThrown) {
 				alert("error" + errorThrown);
 			} 
 		});
 		return false;
-		
 	});
+
+
+
+	
 
 });
 
