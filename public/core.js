@@ -73,7 +73,7 @@ $(document).ready( function() {
 		var username = $('#username').val();
 		var password = $('#password').val();
 
-		$.post("http://localhost:8080/addUsers", {username: username, password: password}, function() {window.location.replace("/");});
+		$.post("http://localhost:8080/addUsers", {username: username, password: password}, function() {set_cookie('username', username, 1); window.location.replace("/");});
 		alert("Added new user successfully");
 	});
 
