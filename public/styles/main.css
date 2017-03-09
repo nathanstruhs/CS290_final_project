@@ -189,32 +189,76 @@ footer {
 
 #sign_up_form {
 	width: 300px;
-	height: 100px;
+	height: 125px;
 	margin: auto;
 	display: block;
+	border-left: 1px solid white;
 }
 
 #sign_up_form label, #sign_up_form input[type='text'] {
-	margin-top: 10px; 
+		margin-top: 10px;
+	width: 125px;
+	margin-left: 20px;
 }
 
 #sign_up_form label {
 	margin-right: 10px;
 }
 
+#signup-submit {
+	background: none;
+    border: 0;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    border: 1px solid white;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+    height: 40px;
+    width: 100px;
+}
+
+#signup-submit:hover {
+	color: #1ABBFC;
+}
+
 #login_form {
 	width: 300px;
-	height: 100px;
+	height: 125px;
 	margin: auto;
 	display: block;
+	border-left: 1px solid white;
 }
 
 #login_form label, #login_form input[type='text'] {
-	margin-top: 10px; 
+	margin-top: 10px;
+	width: 125px;
+	margin-left: 20px;
 }
 
 #login_form label {
 	margin-right: 10px;
+}
+
+#login-submit {
+	background: none;
+    border: 0;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    border: 1px solid white;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+    height: 40px;
+    width: 100px;
+}
+
+#login-submit:hover {
+	color: #1ABBFC;
 }
 
 
