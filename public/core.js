@@ -16,6 +16,13 @@ function randomize_computer_choice() {
 	document.getElementById("computer_display").style.backgroundImage =  "url('" + images[num] + "')";
 }
 
+function set_cookie(cookie_name, cookie_value, days) {
+	var date = new Date();
+	date.setTime(date.getTime() + (days*24*60*60*1000));
+	var expires = "expires=" + date.toUTCString();
+	document.cookie = cookie_name + "=" + cookie_value +"; " + expires;
+}
+
 $(document).ready( function() {
 	$.ajax({ url: "http://localhost:8080/findUsers"}).done(function(data) {
 		var stringyfied_data = String(data);
@@ -61,6 +68,7 @@ $(document).ready( function() {
 			success: function(data) {
 				if (data == "true") {
 					alert("Logged in");
+					set_cookie('username', username, 1);
 					window.location.replace("/");
 				} else {
 					alert("Invalid login credentials");
@@ -74,6 +82,7 @@ $(document).ready( function() {
 		});
 		return false;
 	});
+
 
 
 

@@ -21,6 +21,7 @@ app.post('/addUsers', urlencodedParser, function(req, res) {
 
 app.post('/loginUser', urlencodedParser, function(req, res) {
 	database.validateUser(req, res);
+	
 });
 
 app.get('/', function (req, res) { 
