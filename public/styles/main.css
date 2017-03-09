@@ -38,6 +38,10 @@ header {
 	color: #1ABBFC;
 }
 
+#logo a {
+	text-decoration: none;
+}
+
 #user_menu {
 	height: 50px;
 	width: 200px;
