@@ -53,12 +53,20 @@ $(document).ready( function() {
 		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move, username: username })
 		.done(function(data) {
 			console.log(data);
-			//alert(data);
 			$('#computer_display_button_container').html(data);
-			window.location.replace("/");
+
+			$.ajax({ url: "http://localhost:8080/findUsers"}).done(function(data) {
+				$('#leaderboard-ol').empty();
+				var stringyfied_data = String(data);
+				var username_and_cwc = stringyfied_data.split('\n');
+				for (var i = 0; i < username_and_cwc.length; ++i) {
+					$('#leaderboard-ol').append('<li class="leaderboard-li" >' + username_and_cwc[i] + '</li>');
+				}
+	});
 		}).fail(function() {
 			console.log("getMoves failed");
-		})
+		});
+		
 	})
 
 	$('#sign_up_form').submit(function() {
