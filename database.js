@@ -17,9 +17,8 @@ database.open(function(err,db) {
 
 exports.findUsers = function(req,res) {
     console.log("in findUsers");
-    var cursor = database.collection('users').find( ).toArray(function (err, result) {
+    var cursor = database.collection('users').find( ).sort({cwc:-1}).toArray(function (err, result) {
         if(!err) {
-            result.sort(function(a, b) { return b.cwc - a.cwc });
              for(var i = 0;i < result.length; ++i) {
                 if (i != result.length - 1) {
 	               res.write(result[i].username+ " " +result[i].cwc + "\n");    

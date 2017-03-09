@@ -55,6 +55,7 @@ $(document).ready( function() {
 			console.log(data);
 			//alert(data);
 			$('#computer_display_button_container').html(data);
+			window.location.replace("/");
 		}).fail(function() {
 			console.log("getMoves failed");
 		})
