@@ -47,10 +47,10 @@ $(document).ready( function() {
 	$('.user_display_buttons').click(function() {
 		var computer_move = $('#computer_display').css('background-image');
 		var player_move = $('#user_display').css('background-image');
-
+		var username = get_cookie('username');
 		console.log("COM MOVE: " + computer_move + " Pl MOVE: " + player_move);
 
-		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move})
+		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move, username: username })
 		.done(function(data) {
 			console.log(data);
 			//alert(data);

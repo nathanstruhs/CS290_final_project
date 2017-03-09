@@ -43,13 +43,18 @@ exports.getMoves = function(req, res) {
     var paper = 'url("http://localhost:8080/images/paper.jpeg")';
     var scissors = 'url("http://localhost:8080/images/scissors.png")';
 
+    var username = req.body.username;
+
     if (computer_move == player_move) {
         res.send("Tie!");
     } else if (player_move == rock && computer_move == scissors) {
+        database.collection('users').updateOne({ 'username': username }, { $inc: { 'cwc': 1 }});
         res.send("You win!");
     }  else if (player_move == paper && computer_move == rock) {
+        database.collection('users').updateOne({ 'username': username }, { $inc: { 'cwc': 1 }});
         res.send("You win!");
     }  else if (player_move == scissors && computer_move == paper) {
+        database.collection('users').updateOne({ 'username': username }, { $inc: { 'cwc': 1 }});
         res.send("You win!");
     } else {
         res.send("Computer wins 🐒💩");
