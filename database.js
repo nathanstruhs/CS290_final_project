@@ -44,15 +44,15 @@ exports.getMoves = function(req, res) {
     var scissors = 'url("http://localhost:8080/images/scissors.png")';
 
     if (computer_move == player_move) {
-        res.send("TIE!");
+        res.send("Tie!");
     } else if (player_move == rock && computer_move == scissors) {
-        res.send("You win");
+        res.send("You win!");
     }  else if (player_move == paper && computer_move == rock) {
-        res.send("You win");
+        res.send("You win!");
     }  else if (player_move == scissors && computer_move == paper) {
-        res.send("You win");
+        res.send("You win!");
     } else {
-        res.send("Computer wins")
+        res.send("Computer wins 🐒💩");
     }
 }
 

@@ -1,8 +1,11 @@
 var express = require('express');
 var database = require('./database');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var app = express();
+
+app.use(cookieParser());
 
 app.use(express.static('public'));
 

@@ -34,6 +34,8 @@ $(document).ready( function() {
 		$.post("http://localhost:8080/getMoves", { computer_move: computer_move, player_move: player_move})
 		.done(function(data) {
 			console.log(data);
+			//alert(data);
+			$('#computer_display_button_container').html(data);
 		}).fail(function() {
 			console.log("getMoves failed");
 		})
@@ -75,7 +77,7 @@ $(document).ready( function() {
 
 
 
-	
+
 
 });
 
