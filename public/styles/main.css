@@ -185,12 +185,19 @@ footer {
 	margin-left: 30px;
 }
 
+#logged_in_user_menu a {
+	color: white;
+	text-decoration: none;
+	line-height: 45px;
+	margin-left: 30px;
+}
+
 #user_menu a:hover {
 	color: #1ABBFC;
 }
 
-#user_menu p {
-	color: white;
+#logged_in_user_menu a:hover {
+	color: #1ABBFC;
 }
 
 #sign_up_form {
