@@ -76,4 +76,38 @@ exports.addUser = function(req, res) {
     });
 }
 
+exports.validateUser = function(req, res) {
+    console.log("Validating user..");
+    var username = req.body.username;
+    var password = req.body.password;
+    console.log(username+":"+password);
+
+    database.collection('users', function(err, collection) {
+        collection.findOne({ 'username': username }, function(err, item) {
+            if (!err && item!=null) {
+                if (item.password != password) {
+                    console.log("failure");
+                    res.send("false");
+                    res.end();
+                } else {
+                    console.log("succ");
+                    res.send("true");
+                    res.end();
+                }
+            } else {
+                console.log("ERROR: " + err);
+            }
+        });
+    });
+}
+
+
+
+
+
+
+
+
+
+
 

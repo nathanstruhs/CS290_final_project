@@ -39,13 +39,42 @@ $(document).ready( function() {
 		})
 	})
 
-	$('#sign_up_form').submit(function () {
+	$('#sign_up_form').submit(function() {
 		var username = $('#username').val();
 		var password = $('#password').val();
 
 		$.post("http://localhost:8080/addUsers", {username: username, password: password}, function() {window.location.replace("/");});
 		alert("Added new user successfully");
-	})
+	});
+
+	$('#login_form').submit(function() {
+		var username = $('#username').val();
+		var password = $('#password').val();
+
+		// $.post("/loginUser", {username: username, password: password}, function(data) {
+		// 	console.log(data);
+		// 	if (data == true) {
+		// 		alert("Logged in");
+		// 		window.location.replace("/");
+		// 	} else {
+		// 		alert("Login failed");
+		// 	}
+		// });
+		$.ajax({
+			type: 'POST',
+			url: "/loginUser",
+			data: { 'username': username,
+					'password': password },
+			success: function(data) {
+				alert("Logged in");
+				window.location.replace("/");
+			}, error: function(errorThrown) {
+				alert("error" + errorThrown);
+			} 
+		});
+		return false;
+		
+	});
 
 });
 
