@@ -132,6 +132,17 @@ header {
 	margin-top: 445px;
 }
 
+#sign_up_message a {
+	color: #1ABBFC;
+	text-decoration: none;
+}
+
+#sign_up_message a:hover {
+	text-decoration: underline;
+	background-color: #1ABBFC;
+	color: white;
+}
+
 #leaderboard {
 	height: 100%;
 	max-width: 300px;
@@ -139,10 +150,22 @@ header {
 	flex: 1;
 }
 
+#leaderboard-h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+#leaderboard ol {
+	margin-left: 20px;
+	border-left: 1px solid #1ABBFC;
+}
+
 footer {
 	height: 50px;
 	width: 100%;
 	border: 1px solid white;
+	line-height: 50px;
+	text-align: center;
 }
 
 #computer_display_button_container {
