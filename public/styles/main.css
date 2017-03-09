@@ -49,6 +49,13 @@ header {
 	margin-left: auto;
 }
 
+#logged_in_user_menu {
+	height: 50px;
+	width: 200px;
+	margin-left: auto;
+	display: none;
+}
+
 #main_content {
 	height: 550px;
 	width: 100%;

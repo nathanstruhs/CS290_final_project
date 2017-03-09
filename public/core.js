@@ -23,6 +23,18 @@ function set_cookie(cookie_name, cookie_value, days) {
 	document.cookie = cookie_name + "=" + cookie_value +"; " + expires;
 }
 
+function get_cookie(name) {
+	var value = "; " + document.cookie;
+	var parts = value.split("; " + name + "=");
+	if (parts.length == 2) {
+		return parts.pop().split(";").shift();
+	}
+}
+
+function remove_cookie() {
+	document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+}
+
 $(document).ready( function() {
 	$.ajax({ url: "http://localhost:8080/findUsers"}).done(function(data) {
 		var stringyfied_data = String(data);
@@ -83,10 +95,12 @@ $(document).ready( function() {
 		return false;
 	});
 
+	var cookie = get_cookie("username");
 
-
-
-
+	if (cookie != undefined) {
+		$('#user_menu').css("display", "none");
+		$('#logged_in_user_menu').css("display", "block");
+	}
 
 });
 
